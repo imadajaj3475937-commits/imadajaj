@@ -1,0 +1,305 @@
+/* ==============================================
+   STYLE.CSS - UPDATED BY AI ASSISTANT
+   ============================================== */
+
+/* --- Variables --- */
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent-color: #333333;
+    --hover-color: #444444;
+    --active-color: #555555; /* New color for active state */
+    --whatsapp-color: #25D366;
+    --card-bg: #1a1a1a;
+    --transition: all 0.3s ease;
+}
+
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- General Body Styles --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- Main Container for all pages --- */
+.container,
+.project-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Styles Specific to the Home Page (index.html) --- */
+body.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.home-page .container {
+    max-width: 400px;
+    text-align: center;
+}
+
+/* --- Styles for other pages (projects, reports, etc.) --- */
+body:not(.home-page) {
+    display: block; /* Allows scrolling */
+}
+
+.project-container {
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+
+/* ==============================================
+   PROFILE SECTION (Home Page)
+   ============================================== */
+.profile-section {
+    margin-bottom: 40px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.profile-img-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 300;
+}
+
+
+/* ==============================================
+   BUTTONS (Shared Styles)
+   ============================================== */
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.btn {
+    display: block;
+    padding: 15px 20px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 400;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+/* --- Interaction States for Buttons --- */
+.btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    background-color: var(--active-color);
+    transform: translateY(0) scale(0.98);
+}
+
+
+/* ==============================================
+   PROJECT PAGES
+   ============================================== */
+.back-link {
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.back-link:hover, .back-link:active {
+    color: white;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #444;
+}
+
+/* No :active needed for the card itself as it's not a button */
+
+.project-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Image aspect ratios */
+.project-image--tall { aspect-ratio: 3 / 4; }
+.project-image--wide { aspect-ratio: 16 / 9; }
+.project-image--square { aspect-ratio: 1 / 1; }
+
+.project-info {
+    padding: 20px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.project-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.project-btn:active {
+    background-color: #ccc; /* Slightly darker than white for active state */
+    color: black;
+    transform: scale(0.98);
+}
+
+
+/* ==============================================
+   FOOTER (Home Page)
+   ============================================== */
+footer {
+    margin-top: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.social-icons a {
+    font-size: 1.6rem;
+    color: var(--whatsapp-color);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #2542d3;
+}
+
+.social-icons a:active {
+    transform: translateY(0) scale(0.95);
+    color: #2542d3;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #25D366;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+}
+
+.cta-btn:active {
+    background: #1a9c4a; /* Darker green for active state */
+    transform: translateY(0) scale(0.98);
+}
+
+.mini-proof {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+
+/* ==============================================
+   ANIMATIONS & MEDIA QUERIES
+   ============================================== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
